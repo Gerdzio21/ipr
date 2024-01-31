@@ -33,8 +33,6 @@ public class UsersStoreController implements StoreController{
             return false;
         }
         Product product = new Product(name, description, photos, price);
-        prod
-
-        return false;
+        return true;
     }
 }

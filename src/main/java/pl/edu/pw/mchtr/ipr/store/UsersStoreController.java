@@ -33,6 +33,7 @@ public class UsersStoreController implements StoreController{
             return false;
         }
         Product product = new Product(name, description, photos, price);
+        productSaver.saveProduct(product);
         return true;
     }
 }

@@ -1,4 +1,4 @@
 package pl.edu.pw.mchtr.ipr.game;
 
-public class Game {
+public abstract class Game {
 }

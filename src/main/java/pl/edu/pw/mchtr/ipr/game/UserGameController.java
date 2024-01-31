@@ -2,12 +2,18 @@ package pl.edu.pw.mchtr.ipr.game;
 
 import java.util.List;
 
+import static pl.edu.pw.mchtr.ipr.game.GameType.*;
+
 public class UserGameController implements GameController{
 
     private static GameService gameService;
 
-    private UserGameController(){
+    public UserGameController(){
         gameService = GameService.getInstance();
+    }
+
+    protected UserGameController(GameService gameService) {
+        UserGameController.gameService = gameService;
     }
 
     @Override
@@ -40,15 +46,20 @@ public class UserGameController implements GameController{
     public String joinTeam(String name, String team) {
         Game game = gameService.getGame(name);
         //TODO wywołanie methody z klasy potomnej
-        if(game  )
-        var teams = game
+
 
         return null;
     }
 
     @Override
     public String checkGameType(Game game) {
-        return null;
+        if(game instanceof GameTeams){
+            return TeamGame.toString();
+        }else if(game instanceof GameIndividuals){
+            return IndividualGame.toString();
+        }else{
+            throw new RuntimeException("Unknown Game Type");
+        }
     }
 
     @Override

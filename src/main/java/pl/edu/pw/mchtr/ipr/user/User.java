@@ -25,7 +25,10 @@ public class User {
     public void grandModerator(boolean state){
 
     }
-    public void blockUSer(boolean state){
+    public void blockUser(boolean state){
+    }
+    public String getName(){
+        return name;
     }
 
 

@@ -9,11 +9,11 @@ public interface SessionController {
 
     boolean logout();
     void deleteAccount();
-    boolean updateInfo(String a, String b, Date c);
+    void updateInfo(String name, String newName, Date c) throws Exception;
     void updateDescription(String description);
     void updatePhoto();
-    List<User> searchUser(String name);
-    Map<String, String> getInfo(String a);
-    List<String> filterByMatch (String a , List<String> b);
-    Map<String, String> getNameCountryBirth(Map<String, String> a);
+    List<String> searchUser(String name);
+    Map<String, String> getInfo(String userName);
+    List<String> filterByMatch (String userName , List<String> listNames);
+    Map<String, String> getNameCountryBirth(Map<String, String> userData);
 }

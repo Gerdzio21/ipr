@@ -1,8 +1,5 @@
 package pl.edu.pw.mchtr.ipr.user;
 
-import pl.edu.pw.mchtr.ipr.game.Game;
-import pl.edu.pw.mchtr.ipr.game.GameService;
-
 import java.util.List;
 import java.util.Map;
 
@@ -10,7 +7,8 @@ public class UserFetcher {
     private static UserFetcher instance;
     private UserFetcher(){
 
-    };
+    }
+
     public static UserFetcher getInstance(){
         if (instance == null) {
             instance = new UserFetcher();

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<h1>Info Page for user: <span th:text="${user}"></span></h1>
+
+<button onclick="openSearchModal()">Edytuj</button>
+
+<!-- Modal -->
+<div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="searchModalLabel">Edytuj Opis</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-body">
+                    <textarea id="descriptionInput" placeholder="Wprowadź istniejący opis użytkownika" rows="4" style="width: 100%;"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Anuluj</button>
+                <button type="button" class="btn btn-primary" onclick="updateDescription()">Zatwierdź</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<script  th:inline="javascript">
+    function openSearchModal() {
+        $('#searchModal').modal('show');
+    }
+    function updateDescription(){
+        var user = /*[[${user}]]*/ '';
+        var description = $('#descriptionInput').val();
+        var apiUrl = "/api/users/" + user;
+
+        var requestData = {
+            description: description
+        };
+
+        $.ajax({
+            url: apiUrl,
+            type: 'PUT',
+            contentType: 'application/json',
+            data: JSON.stringify(requestData),
+            success: function(response) {
+                console.log('Successfully updated description:', response);
+            },
+            error: function(error) {
+                console.error('Error updating description:', error);
+            }
+        });
+    }
+
+
+</script>
+
+</body>
+</html>

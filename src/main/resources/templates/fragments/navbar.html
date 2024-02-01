@@ -1,32 +1,14 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-<!--    <title>Moja Strona</title>-->
-<!--</head>-->
-<!--<body>-->
-
-<!--<a href="/1/shop"><button>Store</button></a>-->
-<!--<a href="/1/games"><button>Games</button></a>-->
-<!--<a href="/1/messages"><button>Messages</button></a>-->
-<!--<a href="/1/info"><button>Profile</button></a>-->
-
-
-<!--</body>-->
-<!--</html>-->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moja Strona</title>
-    <!-- Dodanie Bootstrapa -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>My Website</title>
+    <!-- Dodaj inne elementy nagłówka, jakie chcesz -->
 </head>
 <body>
-<div class="container-fluid">
-<!-- Pasek nawigacyjny Bootstrapa -->
+<header>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">Logo Platformy</a>
 
@@ -52,7 +34,7 @@
                 </button>
             </li>
         </ul>
-            <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav ml-auto">
             <!-- Linki nawigacyjne z ikonkami -->
             <li class="nav-item">
                 <a class="nav-link" href="/1/shop">
@@ -86,14 +68,7 @@
         </ul>
     </div>
 </nav>
-
-<h1>Game Page for user: <span th:text="${user}"></span></h1>
-</div>
-<!-- Dodanie Bootstrapa i Font Awesome -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+</header>
 
 </body>
 </html>

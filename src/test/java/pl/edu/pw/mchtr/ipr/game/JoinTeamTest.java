@@ -34,7 +34,6 @@ public class JoinTeamTest {
     void shouldBeAddedToTeamWhenTeamExist() {
         //given
         when(gameServiceMock.getGame("test")).thenReturn(new GameTeams());
-
         //when
         String status = gameController.joinTeam("Bob", "Team");
         //then
@@ -44,7 +43,7 @@ public class JoinTeamTest {
     @Test
     void shouldBeAddedToNewTeamWhenTeamDoesNotExist() {
         //given
-
+        when(gameServiceMock.getGame("test")).thenReturn(new GameTeams());
         //when
         String status = gameController.joinTeam("Bob", "Team");
         //then

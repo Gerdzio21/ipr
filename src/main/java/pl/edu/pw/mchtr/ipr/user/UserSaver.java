@@ -12,6 +12,12 @@ public class UserSaver {
         }
         return instance;
     }
-    void saveUser(User user){}
+    public void saveUser(User user){
+        if(UserRepository.exist(user)){
+            UserRepository.updateUser(user);
+        }else {
+            UserRepository.addUser(user);
+        }
+    }
 
 }

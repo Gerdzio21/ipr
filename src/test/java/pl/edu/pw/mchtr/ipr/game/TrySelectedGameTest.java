@@ -46,6 +46,7 @@ public class TrySelectedGameTest {
         //when
         String gameType = gameController.tryGame("test");
         //then
+        verify(gameServiceMock).getGame("test");
         assertEquals(gameType, TeamGame.toString());
     }
 

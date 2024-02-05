@@ -12,7 +12,7 @@ public class UserSessionController implements SessionController {
     private static UserFetcher userFetcher;
     private static UserSaver userSaver;
 
-    UserSessionController() {
+    public UserSessionController() {
         this(UserFetcher.getInstance(), UserSaver.getInstance());
     }
 
@@ -69,7 +69,7 @@ public class UserSessionController implements SessionController {
 
     @Override
     public Map<String, String> getInfo(String userName) {
-        Map<String, String> userData = userFetcher.getUserData();
+        Map<String, String> userData = userFetcher.getUserData(userName);
         return getNameCountryBirth(userData);
     }
 

@@ -20,10 +20,10 @@ public class UserFetcher {
         return null;
     }
     //TODO
-    public Map<String, String> getUserData(){
-        return null;
+    public Map<String, String> getUserData(String userName){
+        return UserRepository.getUserByName(userName).get().getUserMap();
     }
     public List<User> getUsers(){
-        return null;
+        return UserRepository.getUsers();
     }
 }
